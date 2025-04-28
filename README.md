@@ -7,8 +7,6 @@ It uses:
 - Spotify Web API (Spotipy) to search and create playlists
 - Python for orchestration
 
----
-
 ## 🚀 Features
 
 - Analyze user prompt using GPT
@@ -16,7 +14,6 @@ It uses:
 - Search for tracks by these artists on Spotify
 - Create a brand new public playlist on your account
 
----
 
 ## 💻 Technologies Used
 
@@ -25,7 +22,6 @@ It uses:
 - Spotify Web API (via `spotipy`)
 - Environment variables for secrets (`python-dotenv`)
 
----
 
 ## ⚙️ Setup Instructions
 
@@ -54,7 +50,6 @@ OPENAI_API_KEY=your_openai_key
 python main.py
 ```
 
----
 
 ## 🔨 Development Notes
 - `requirements.txt` was generated using [`pipreqs`](https://github.com/bndr/pipreqs) to only include libraries actually imported in the code.
