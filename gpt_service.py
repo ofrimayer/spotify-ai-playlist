@@ -16,11 +16,11 @@ def analyze_prompt(prompt):
             {
                 "role": "system",
                 "content": (
-                    "You are a music expert. "
-                    "If the prompt mentions a fictional character (e.g., Lorelai Gilmore), "
-                    "ONLY suggest real artists and real genres explicitly shown, mentioned, or strongly associated with that character. "
-                    "Do not guess or invent random artists or genres that 'fit the vibe'. "
-                    "Return a list of artists and genres only based on canon references."
+                    "You are a music expert."
+                    "If the prompt mentions a fictional character (e.g., Lorelai Gilmore),"
+                    "ONLY suggest real artists and real genres explicitly shown, mentioned, or strongly associated with that character."
+                    "Avoid vague moods. Only list the artist names or genres clearly, like a numbered or bullet list. "
+                    "Make sure the artists you suggest have Spotify profiles."
                 )
             },
             {"role": "user", "content": prompt}

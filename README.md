@@ -9,18 +9,20 @@ It uses:
 
 ## 🚀 Features
 
-- Analyze user prompt using GPT
-- Extract real artists and genres
-- Search for tracks by these artists on Spotify
-- Create a brand new public playlist on your account
+- Input a vibe or character and get a matching playlist.
+- GPT suggests artists and genres based on canon references.
+- Searches Spotify for real songs and assembles a playlist.
+- Playlist is automatically created on the user's Spotify account.
+- Flask backend to handle AI, Spotify API calls.
+- Future: Frontend in React
 
 
 ## 💻 Technologies Used
 
-- Python
-- OpenAI GPT-3.5 (via `openai` Python package)
-- Spotify Web API (via `spotipy`)
-- Environment variables for secrets (`python-dotenv`)
+- **Flask** backend (`app_backend.py`)
+- **OpenAI API** for GPT prompts (`gpt_service.py`)
+- **Spotify API** for search, playlist creation (`spotify_utils.py`, `spotify_auth.py`)
+- `.env` file to store your OpenAI and Spotify credentials.
 
 
 ## ⚙️ Setup Instructions
@@ -45,10 +47,19 @@ SPOTIFY_REDIRECT_URI=http://localhost:8888/callback
 OPENAI_API_KEY=your_openai_key
 ```
 
-4. Run the app:
+4. Run the backend:
 ```bash
-python main.py
+python python app_backend.py
 ```
+
+5. Make a POST request to http://127.0.0.1:5000/create_playlist with JSON body:
+```json
+{
+  "prompt": "Lorelai Gilmore"
+}
+```
+
+6. It returns a Spotify playlist link!
 
 
 ## 🔨 Development Notes
@@ -59,3 +70,8 @@ python main.py
 pip install pipreqs
 pipreqs . --force
 ```
+
+## ✍🏻 To-Do
+- Frontend
+- Production deployment (backend + frontend)
+- Other: Advanced
