@@ -54,6 +54,10 @@ input[type="text"]:focus {
   border-color: #ccc;
 }
 
+input[type="text"]:hover {
+  background-color: #121212;
+}
+
 /* Button */
 button {
   background-color: #333;
