@@ -7,12 +7,12 @@ body, html {
     #111 20%,     
     #111 20%,     
     #222 40%,     
-    #000 40%,     
-    #000 60%,     
-    #000 60%,     
-    #000 80%,     
-    #000 80%,     
-    #000 100%     
+    #191414 40%,     
+    #191414 60%,     
+    #191414 60%,     
+    #191414 80%,     
+    #191414 80%,     
+    #191414 100%     
   );
   height: 100%;
   margin: 0;
@@ -41,7 +41,7 @@ form {
 
 /* Input box */
 input[type="text"] {
-  background-color: #000;
+  background-color: #191414;
   border: 1px solid #7f7983;
   color: white;
   padding: 10px;
@@ -56,7 +56,7 @@ input[type="text"]:focus {
 }
 
 input[type="text"]:hover {
-  background-color: #121212;
+  background-color: #151111;
 }
 
 /* Button */
@@ -79,6 +79,33 @@ button:hover {
 p {
   color: white;
   margin-top: 20px;
+}
+
+/* Links */
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #bbb;
+}
+
+.highlight {
+  color: #1DB954;
+  display: inline-block;
+  animation: text-slide-in 1s ease forwards;
+  opacity: 0;
+}
+
+.spotify-img {
+  width: 36px;
+  height: 36px;
+  margin-right: 7px;
+  position: relative;
+  top: 5px;
+  animation: icon-slide-in 1s ease forwards;
+  opacity: 0;
 }
 
 /* Spinner style */
@@ -131,5 +158,29 @@ p {
 
   h1 {
     font-size: 32px;
+  }
+}
+
+/* Keyframes for the icon */
+@keyframes icon-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes for the word Spotify */
+@keyframes text-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
