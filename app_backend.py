@@ -3,9 +3,11 @@ from flask import Flask, request, jsonify
 from spotify_auth import get_spotify_client
 from spotify_utils import create_playlist, add_tracks, search_tracks
 from gpt_service import analyze_prompt
+from flask_cors import CORS
 
 # Create a new Flask app instance
 app = Flask(__name__)
+CORS(app) # By using CORS, allow requests from any frontend during development
 
 # Connect to Spotify when the server starts
 sp = get_spotify_client()
