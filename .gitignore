@@ -1,3 +1,35 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 .env
 
-venv/
+# React / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# VSCode Settings
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# IDEs
+.idea/
+*.iml
+
+# System Files
+Thumbs.db
+ehthumbs.db
