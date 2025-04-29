@@ -6,16 +6,21 @@ import './App.css';
 function App() {
   const [prompt, setPrompt] = useState(''); // State to hold the user's text input
   const [message, setMessage] = useState(''); // State to hold a success or error message
+  const [loading, setLoading] = useState(false); // loading state
 
   // When the user submits the form
   async function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
+    setMessage('');
     try {
       const data = await createPlaylist(prompt); // Send prompt to backend and wait for response
       setMessage(`Playlist created! Check it here: ${data.playlist_url}`);
     } catch (error) {
       console.error(error);
       setMessage('Failed to create playlist. Try again!');
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -30,11 +35,17 @@ function App() {
           onChange={(e) => setPrompt(e.target.value)}
           required
         />
-        <button type="submit">Generate Playlist</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Generating...' : 'Generate Playlist'}
+        </button>
       </form>
-      {message && <p>{message}</p>}
+
+      {loading && <div className="spinner"></div>}
+
+      {!loading && message && <p>{message}</p>}
     </div>
   );
 }
+
 
 export default App;

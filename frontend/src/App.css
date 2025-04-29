@@ -1,19 +1,18 @@
 /* App.css */
 
-/* Set the entire background black and center content */
 body, html {
   background: linear-gradient(
     135deg,
-    #111 0%,      /* Solid black */
-    #111 20%,     /* Still black up to 20% */
-    #111 20%,     /* At exactly 20%, switch to dark grey */
-    #222 40%,     /* Stay grey up to 40% */
-    #000 40%,     /* Snap back to black at 40% */
-    #000 60%,     /* Black up to 60% */
-    #000 60%,     /* Snap to grey again at 60% */
-    #000 80%,     /* Grey to 80% */
-    #000 80%,     /* Black again at 80% */
-    #000 100%     /* Finish with black */
+    #111 0%,      
+    #111 20%,     
+    #111 20%,     
+    #222 40%,     
+    #000 40%,     
+    #000 60%,     
+    #000 60%,     
+    #000 80%,     
+    #000 80%,     
+    #000 100%     
   );
   height: 100%;
   margin: 0;
@@ -28,7 +27,6 @@ body, html {
   min-height: 100vh;
 }
 
-/* White title */
 h1 {
   color: white;
   margin-bottom: 30px;
@@ -36,7 +34,7 @@ h1 {
 
 form {
   display: flex;
-  gap: 10px; /* <-- Adds nice space between input and button */
+  gap: 10px;
   align-items: center;
 }
 
@@ -52,7 +50,6 @@ input[type="text"] {
   outline: none;
 }
 
-/* On focus (click) highlight */
 input[type="text"]:focus {
   border-color: #ccc;
 }
@@ -61,22 +58,37 @@ input[type="text"]:focus {
 button {
   background-color: #333;
   color: white;
-  padding: 10px 20px; /* Same padding vertical (10px) as input */
+  padding: 10px 20px;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  height: 42px; /* Same height as input! */
+  height: 42px;
 }
 
-/* Button hover effect */
 button:hover {
   background-color: #555;
 }
 
-/* Message styling */
 p {
   color: white;
   margin-top: 20px;
+}
+
+/* Spinner style */
+.spinner {
+  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  border: 6px solid transparent; 
+  border-top: 6px solid #bbb; 
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite; 
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
