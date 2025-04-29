@@ -3,3 +3,4 @@ flask_cors==5.0.1
 openai==1.76.0
 spotipy==2.25.1
 python-dotenv==1.1.0
+gunicorn
