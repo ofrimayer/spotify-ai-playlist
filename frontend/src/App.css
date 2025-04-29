@@ -1,38 +1,82 @@
+/* App.css */
+
+/* Set the entire background black and center content */
+body, html {
+  background: linear-gradient(
+    135deg,
+    #111 0%,      /* Solid black */
+    #111 20%,     /* Still black up to 20% */
+    #111 20%,     /* At exactly 20%, switch to dark grey */
+    #222 40%,     /* Stay grey up to 40% */
+    #000 40%,     /* Snap back to black at 40% */
+    #000 60%,     /* Black up to 60% */
+    #000 60%,     /* Snap to grey again at 60% */
+    #000 80%,     /* Grey to 80% */
+    #000 80%,     /* Black again at 80% */
+    #000 100%     /* Finish with black */
+  );
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+/* White title */
+h1 {
   color: white;
+  margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  display: flex;
+  gap: 10px; /* <-- Adds nice space between input and button */
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Input box */
+input[type="text"] {
+  background-color: #000;
+  border: 1px solid #7f7983;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* On focus (click) highlight */
+input[type="text"]:focus {
+  border-color: #ccc;
+}
+
+/* Button */
+button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px; /* Same padding vertical (10px) as input */
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 42px; /* Same height as input! */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #555;
+}
+
+/* Message styling */
+p {
+  color: white;
+  margin-top: 20px;
 }

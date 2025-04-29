@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Spotify AI Playlist Generator 🎶</h1>
+      <h1>Spotify AI Playlist Generator</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
