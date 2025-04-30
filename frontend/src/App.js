@@ -1,5 +1,5 @@
 // Main React component that handles UI and displays results
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPlaylist } from './api';
 import './App.css';
 
@@ -10,17 +10,23 @@ function App() {
   const [loading, setLoading] = useState(false); // loading state
   const [showColdStartMsg, setShowColdStartMsg] = useState(false); 
 
+    // If it takes more than 5s, show a message
+    useEffect(() => {
+      let timer;
+      if (loading) {
+        timer = setTimeout(() => {
+          setShowColdStartMsg(true);
+        }, 5000);
+      }
+      return () => clearTimeout(timer); // Clears timer on re-render
+    }, [loading]);
+
   // When the user submits the form
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setMessage('');
     setShowColdStartMsg(false); 
-
-    // If it takes more than 10s, show a message
-    const timer = setTimeout(() => {
-      setShowColdStartMsg(true);
-    }, 5000); // 5 seconds
     
     try {
       const data = await createPlaylist(prompt); // Send prompt to backend and wait for response
