@@ -2,7 +2,7 @@
 
 // Sends a POST request to the backend with the user-provided prompt
 export async function createPlaylist(prompt) {
-    const response = await fetch('http://127.0.0.1:5000/create_playlist', {
+    const response = await fetch('https://spotify-ai-backend.onrender.com/create_playlist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

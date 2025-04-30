@@ -8,12 +8,20 @@ function App() {
   const [playlistUrl, setPlaylistUrl] = useState(''); // Holds the playlist URL
   const [message, setMessage] = useState(''); // State to hold a success or error message
   const [loading, setLoading] = useState(false); // loading state
+  const [showColdStartMsg, setShowColdStartMsg] = useState(false); 
 
   // When the user submits the form
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setMessage('');
+    setShowColdStartMsg(false); 
+
+    // If it takes more than 10s, show a message
+    const timer = setTimeout(() => {
+      setShowColdStartMsg(true);
+    }, 5000); // 5 seconds
+    
     try {
       const data = await createPlaylist(prompt); // Send prompt to backend and wait for response
       setPlaylistUrl(data.playlist_url); // Save the returned URL separately
@@ -45,6 +53,9 @@ function App() {
       </form>
 
       {loading && <div className="spinner"></div>}
+
+      {loading && showColdStartMsg && <p>Waking up the servers... this might take a while. Hang tight! ☕️</p>}
+      {!loading && message && <p>{message}</p>}
 
       {!loading && playlistUrl && (
         <p>
